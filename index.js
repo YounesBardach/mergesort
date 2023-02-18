@@ -1,4 +1,23 @@
-// mergeSort algorithm applied to an array
+//Recursive Fibonacci Function
+
+const fiboSeq = (number) => {
+  const Seq = [];
+  for (let i = 0; i < number; i++) {
+    Seq.push(recufibo(i));
+  }
+  return Seq;
+};
+
+const recufibo = (number) => {
+  if (number < 2) {
+    return number;
+  }
+  return recufibo(number - 1) + recufibo(number - 2);
+};
+
+console.log([fiboSeq(7)]);
+
+//MergeSort algorithm applied to an array
 
 const testArrayOne = [-8, 2, 2, 3, 9];
 const testArrayTwo = [-3, -2, -1, 0];
@@ -27,4 +46,4 @@ const mergeSort = (array) => {
   return twoWayMergeSort(mergeSort(array), mergeSort(rightArray));
 };
 
-console.log(mergeSort(testArrayThree));
+// console.log(mergeSort(testArrayThree));
