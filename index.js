@@ -48,3 +48,4 @@ const mergeSortAlgo = (array) => {
   return mergeSortedArrays(mergeSortAlgo(leftArray), mergeSortAlgo(rightArray));
 };
 
+//usually using .sort() should be more efficient, this is for learning.
