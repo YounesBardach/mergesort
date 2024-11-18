@@ -34,16 +34,17 @@ const mergeSortedArrays = (arrayLeft, arrayRight) => {
   }
   return [...sortedArray, ...arrayLeft, ...arrayRight];
 };
-// console.log(twoWayMergeSort(testArrayOne, testArrayTwo));
 
 const mergeSortAlgo = (array) => {
   if (array.length < 2) {
-    return array;
+    return array; // Base case: arrays with 0 or 1 elements are already sorted
   }
-  const mid = array.length / 2;
-  const rightArray = array.splice(0, mid);
 
-  return mergeSortedArrays(mergeSortAlgo(array), mergeSortAlgo(rightArray));
+  const mid = Math.floor(array.length / 2); // Find the middle index
+  const leftArray = array.slice(0, mid); // Create a copy of the left half using slice
+  const rightArray = array.slice(mid); // Create a copy of the right half using slice
+
+  // Recursively split and merge
+  return mergeSortedArrays(mergeSortAlgo(leftArray), mergeSortAlgo(rightArray));
 };
 
-// console.log(mergeSort(testArrayThree));
